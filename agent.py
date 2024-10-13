@@ -70,10 +70,10 @@ async def main():
     kernel = Kernel()
 
     openAIClient: AsyncOpenAI = AsyncOpenAI(
-    api_key="fake-key",  # This cannot be an empty string, use a fake key
-    base_url="http://localhost:11434/v1",
-    # base_url="http://localhost:8080/v1", # llamafile
-)
+        api_key="fake-key",  # This cannot be an empty string, use a fake key
+        base_url="http://localhost:11434/v1",
+        # base_url="http://localhost:8080/v1", # llamafile
+    )
 
     # Add the OpenAIChatCompletion AI Service to the Kernel
     kernel.add_service(OpenAIChatCompletion(service_id="agent", ai_model_id="llama3.1", async_client=openAIClient))
